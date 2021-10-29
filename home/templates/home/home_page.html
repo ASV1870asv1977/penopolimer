@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static wagtailimages_tags wagtailcore_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -12,34 +12,58 @@
     <div class="container-fluid">
         <div class="row">
             <div class="main-slider">
-                <div>
-                    <div class="slide-wrap">
-                        <div class="slide-pic" style="background-image: url({% static 'img/slide1.jpg' %})"></div>
-                        <div class="container">
-                            <div class="slide-content">
-                                <p><span class="slider-head">ППМ изоляция —</span> современный высокоэффективный<br/>материал
-                                    для
-                                    изоляции труб<br/>вашей тепловой сети
-                                </p>
-                                <a href="#" class="slide-button">Описание нашей продукции</a>
+
+
+                {% for slide in page.slides.all %}
+                    {% image slide.image_slide fill-2000x600 as bigimage %}
+                    <div>
+                        <div class="slide-wrap">
+                            <div class="slide-pic" style="background-image: url({{ bigimage.url }})"></div>
+                            <div class="container">
+                                <div class="slide-content">
+                                    <p>
+                                        <span class="slider-head">
+                                            {{ slide.product_name }}
+                                        </span>
+                                        {{ slide.product_description|richtext }}
+                                    </p>
+                                    <a href="#" class="slide-button">Описание нашей продукции</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="slide-wrap">
-                        <div class="slide-pic" style="background-image: url({% static 'img/slide2.jpg' %})"></div>
-                        <div class="container">
-                            <div class="slide-content">
-                                <p><span class="slider-head">Неподвижные опоры —</span> крепление может
-                                    осуществляться<br/>по
-                                    различным технологиям:<br/>посредством сварочного оборудования, с помощью хомутов.
-                                </p>
-                                <a href="#" class="slide-button">Описание нашей продукции</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                {% endfor %}
+
+
+                {#                <div>#}
+                {#                    <div class="slide-wrap">#}
+                {#                        <div class="slide-pic" style="background-image: url({% static 'img/slide1.jpg' %})"></div>#}
+                {#                        <div class="container">#}
+                {#                            <div class="slide-content">#}
+                {#                                <p><span class="slider-head">ППМ изоляция —</span> современный высокоэффективный<br/>материал#}
+                {#                                    для#}
+                {#                                    изоляции труб<br/>вашей тепловой сети#}
+                {#                                </p>#}
+                {#                                <a href="#" class="slide-button">Описание нашей продукции</a>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#                <div>#}
+                {#                    <div class="slide-wrap">#}
+                {#                        <div class="slide-pic" style="background-image: url({% static 'img/slide2.jpg' %})"></div>#}
+                {#                        <div class="container">#}
+                {#                            <div class="slide-content">#}
+                {#                                <p><span class="slider-head">Неподвижные опоры —</span> крепление может#}
+                {#                                    осуществляться<br/>по#}
+                {#                                    различным технологиям:<br/>посредством сварочного оборудования, с помощью хомутов.#}
+                {#                                </p>#}
+                {#                                <a href="#" class="slide-button">Описание нашей продукции</a>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
             </div>
         </div>
     </div>

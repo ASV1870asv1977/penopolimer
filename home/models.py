@@ -1,14 +1,15 @@
 from django.db import models
-from wagtail.admin.edit_handlers import FieldPanel
+from modelcluster.fields import ParentalKey
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
 from wagtail.core.fields import RichTextField
 
-from wagtail.core.models import Page
+from wagtail.core.models import Page, Orderable
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 
 
 @register_snippet
 class Header(models.Model):
-
     telephones = RichTextField(
         features=['enter'],
         max_length=100,
@@ -36,7 +37,6 @@ class Header(models.Model):
 
 @register_snippet
 class Footer(models.Model):
-
     address = RichTextField(
         features=['enter'],
         max_length=100,
@@ -102,6 +102,53 @@ class AboutPage(Page):
     max_count = 1
 
 
+class HomeSlidesImage(Orderable):
+    """Изображения продукции для слайдов с описанием"""
+    image_slide = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Изображение продукции',
+    )
+
+    product_name = models.CharField(
+        blank=True,
+        null=True,
+        max_length=100,
+        verbose_name="Название продукции",
+    )
+
+    # product_name = RichTextField(
+    #     features=['enter'],
+    #     blank=True,
+    #     null=True,
+    #     max_length=100,
+    #     verbose_name="Название продукции",
+    # )
+
+    product_description = RichTextField(
+        features=['enter'],
+        blank=True,
+        null=True,
+        max_length=200,
+        verbose_name="Описание продукции",
+    )
+
+    equipment = ParentalKey(
+        'home.HomePage',
+        on_delete=models.CASCADE,
+        related_name='slides',
+    )
+
+    panels = [
+        ImageChooserPanel('image_slide'),
+        FieldPanel('product_name'),
+        FieldPanel('product_description'),
+    ]
+
+
 class HomePage(Page):
     """Главная"""
 
@@ -117,17 +164,18 @@ class HomePage(Page):
 
     parent_page_types = []
 
-    name_page = models.CharField(
-        max_length=100,
-        blank=True,
-        null=True,
-        verbose_name="Подзаголовок",
-    )
+    # name_page = models.CharField(
+    #     max_length=100,
+    #     blank=True,
+    #     null=True,
+    #     verbose_name="Подзаголовок",
+    # )
 
     content_panels = Page.content_panels + [
-        FieldPanel('name_page'),
+        MultiFieldPanel([
+            InlinePanel('slides', label='слайд')],
+            heading='Слайды'),
     ]
-
-
-
-
+    # content_panels = Page.content_panels + [
+    #     FieldPanel('name_page'),
+    # ]
