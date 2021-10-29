@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+//фирменный стиль
+$brand-blue: #292569;
+$brand-orange: #db5e15;
+$brand-white: #fff;
+
+//Сайт
+$page-background-color: #ededed;
+$dark-block-bg: #e3e3e3;
+
+$line-height: 1.4;
+$text-size: 14px;
+$text-color: #4d4d4d;
+
+$link-color: $brand-blue;
+
+$menu-bg: $brand-blue;
+$menu-link: $brand-white;
+$menu-link-active: $brand-orange;
+$menu-link-active-bg: $page-background-color;
+
+$white-block: $brand-white;
+$date-bg: #764d35;
+
+//Текст на кнопках
+$button-font-size: 13px;
+
+//Заголовки
+$header-color: #99001a;
+$h1-size: $text-size + 6;
+$h2-size: $text-size + 4;
+$h3-size: $text-size + 3;
+$h4-size: $text-size + 2;
+$h5-size: $text-size + 1;

@@ -40,7 +40,15 @@
 {% footer_tag %}
 
 {# Global javascript #}
-<script type="text/javascript" src="{% static 'js/penopolimer_v2.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'js/penopolimer_v2.js' %}"></script>#}
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+
 
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}

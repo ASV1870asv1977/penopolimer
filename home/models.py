@@ -67,6 +67,11 @@ class Footer(models.Model):
         return 'Футер'
 
 
+class CalendarPage(Page):
+    """Календарь"""
+    max_count = 1
+
+
 class PhotoGalleryPage(Page):
     """Фотогалерея"""
     max_count = 1
@@ -107,6 +112,7 @@ class HomePage(Page):
         'home.FormPage',
         'home.ContactsPage',
         'home.PhotoGalleryPage',
+        'home.CalendarPage',
     ]
 
     parent_page_types = []

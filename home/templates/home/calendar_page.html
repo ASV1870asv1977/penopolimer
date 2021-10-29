@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/responsive-calendar.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+    <div class="container-fluid content-wrapper contacts">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Календарь мероприятий</h2>
+
+                        <div class="calendar">
+                            <div class="responsive-calendar">
+                                <div class="controls">
+                                    <a class="pull-left" data-go="prev">
+                                        <div class="btn"><i class="fa fa-angle-left" aria-hidden="true"></i> Месяц назад
+                                        </div>
+                                    </a>
+                                    <h4><span data-head-year></span> <span data-head-month></span></h4>
+                                    <a class="pull-right" data-go="next">
+                                        <div class="btn">Месяц вперёд <i class="fa fa-angle-right"
+                                                                         aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="day-headers">
+                                    <div class="day header">Пн</div>
+                                    <div class="day header">Вт</div>
+                                    <div class="day header">Ср</div>
+                                    <div class="day header">Чт</div>
+                                    <div class="day header">Пт</div>
+                                    <div class="day header">Сб</div>
+                                    <div class="day header">Вс</div>
+                                </div>
+                                <div class="days" data-group="days">
+                                    <!-- the place where days will be generated -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block extra_js %}
+        <script src="{% static 'js/responsive-calendar.min.js' %}"></script>
+        <script>
+            $(document).ready(function () {
+                $(".responsive-calendar").responsiveCalendar({
+                    events: {
+                        "2016-08-01": {"url": "http://ppmi-info.ru"},
+                        "2016-08-10": {"url": "http://yandex.ru"}
+                    }
+                });
+            });
+        </script>
+    {% endblock %}
+
+    {#{% include 'home/welcome_page.html' %}#}
+
+{% endblock content %}

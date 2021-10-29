@@ -169,7 +169,10 @@
         </div>
     </div>
 
-
+    {% block extra_js %}
+        <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox-thumbs.js' %}"></script>
+    {% endblock %}
 
     {#{% include 'home/welcome_page.html' %}#}
 
