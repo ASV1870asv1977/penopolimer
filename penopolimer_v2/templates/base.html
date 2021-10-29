@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar base_tags %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="ru">
@@ -34,6 +34,8 @@
 {% wagtailuserbar %}
 
 {% block content %}{% endblock %}
+
+{% footer_tag %}
 
 {# Global javascript #}
 <script type="text/javascript" src="{% static 'js/penopolimer_v2.js' %}"></script>

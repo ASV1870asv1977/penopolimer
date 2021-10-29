@@ -1,0 +1,22 @@
+{% load static wagtailcore_tags %}
+
+
+<div class="container-fluid footer">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="small-logo"><a href="#"></a></div>
+                    <div class="footer-contact">
+                        <span>{{ footer.address|richtext }}</span>
+                        <span class="f-phones">{{ footer.telephones|richtext }}</span>
+                        <span><a href="mailto:market@ppmi-info.ru">{{ footer.email|richtext }}</a></span>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-right">
+                    Сайт сделан в «<a href="http://www.ener.ru">Энерго</a>»
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
