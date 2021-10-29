@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    {#<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">#}
+{% endblock extra_css %}
+
+{% block content %}
+
+    <div class="container-fluid content-wrapper">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Вопросы и ответы</h2>
+
+
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                       aria-expanded="true" aria-controls="collapseOne">
+                                        Если при проектировании тепловой камеры заложить внутри монтаж труб в
+                                        ППМИ-изоляции, сложно ли в дальнейшем устранять повреждения изоляции после
+                                        врезки труб на ответвления. И каким образом это осуществляется. Трубы небольшого
+                                        диаметра.
+                                    </a>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        Производство труб в ППМ изоляции включает в себя несколько участков. Линия для
+                                        заливки труб ППМ композицией состоит из набора нестандартного оборудования.
+                                        Заливка
+                                        производится в определенной последовательности. Время, требуемое на выполнение
+                                        всех
+                                        операций по заливке трубы, составляет 50-60 минут.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        При какой минимальной температуре наружного воздуха можно использовать
+                                        трубопроводы
+                                        в ППМ изоляции?
+                                    </a>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        ППМ изоляция может использоваться в любой климатической зоне. Ограничением для
+                                        использования стальных труб в ППМ изоляции служит только материал (марка стали)
+                                        труб. Область применения различных марок сталей приведена в таблице
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                        Сколько стоит труба в ППМ изоляции?
+                                    </a>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <p>Стоимость ППМ изоляции зависит от многих факторов, так как НПП «Пенополимер»
+                                            проводит гибкую политику в ценообразовании и при работе со своими
+                                            клиентами.</p>
+                                        <p>Получить действующий на сегодняшний день прайс-лист, получить информацию о
+                                            скидках или специальной цене Вы можете по телефонам +7(496)614-46-93,
+                                            614-67-64
+                                            или прислав запрос по факсу +7(496)614-24-87 или e-mail:
+                                            <a href="mailto:market@ppmi-info.ru">market@ppmi-info.ru</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingFour">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                                        Какие нормативные документы рекомендуют использование ППМ изоляции?
+                                    </a>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                        <p>Стоимость ППМ изоляции зависит от многих факторов, так как НПП «Пенополимер»
+                                            проводит гибкую политику в ценообразовании и при работе со своими
+                                            клиентами.</p>
+                                        <p>Получить действующий на сегодняшний день прайс-лист, получить информацию о
+                                            скидках или специальной цене Вы можете по телефонам +7(496)614-46-93,
+                                            614-67-64
+                                            или прислав запрос по факсу +7(496)614-24-87 или e-mail:
+                                            <a href="mailto:market@ppmi-info.ru">market@ppmi-info.ru</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingFive">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                                        Может ли намокнуть ППМ изоляция?
+                                    </a>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingFive">
+                                    <div class="panel-body">
+                                        <p>ППМ изоляцию можно сравнить с высококачественной одеждой для активного отдыха
+                                            и
+                                            спорта из водонепроницаемой, но вентилируемой ткани. Так и ППМ не позволяет
+                                            воде
+                                            проникать к поверхности стальной трубы, но позволяет легко выходить влаге из
+                                            нее, то есть изоляция может «дышать». Низкое водопоглощение ППМ изоляции не
+                                            позволяет ей напитываться влагой даже при поврежденном водоотталкивающем
+                                            наружном слое. А благодаря своей паропроницаемости ППМ изоляция при
+                                            включении
+                                            трубопровода в работу полностью высыхает за несколько дней.</p>
+                                        <p>Эти свойства изоляция сохраняет на протяжении всего срока службы, что имеет
+                                            большое значение для экономичной и надежной эксплуатации тепловой сети.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingSix">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">
+                                        Почему трубопроводы в ППМ изоляции экономичнее трубопроводов в ППУ изоляции?
+                                    </a>
+                                </div>
+                                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingSix">
+                                    <div class="panel-body">
+                                        <p>Сравнивания два различных типа тепловой изоляции по технико-экономическим
+                                            показателям необходимо учитывать следующие факторы:
+                                        </p>
+                                        <ol>
+                                            <li>При покупке труб и фасонных изделий в ППМ изоляции Вы экономите, так как
+                                                стоимость таких же изделий у добросовестных производителей ППУ выше. Это
+                                                связано с большими затратами при производстве ППУ трубопроводов и
+                                                сложным
+                                                технологическим процессом их изготовления, состоящим из множества
+                                                операций
+                                                (подготовка стальной трубы, изготовление и подготовка полиэтиленовой
+                                                оболочки, устройство и проверка системы ОДК и т.д.).
+                                            </li>
+                                            <li>При монтаже предизолированных стальных труб в ППМ изоляции в отличие от
+                                                труб
+                                                в ППУ изоляции, Вы экономите на отсутствии затрат:
+                                                <ul>
+                                                    <li>за счет гораздо меньшего количества оплачиваемых стыков, так как
+                                                        стоимость изолирования стыков на прямолинейных участках
+                                                        трубопроводов входит в стоимость самой трубы,
+                                                    </li>
+                                                    <li>за счет низкой стоимости изолирования дополнительных
+                                                        (оставшихся)
+                                                        стыков,
+                                                    </li>
+                                                    <li>по монтажу системы контроля за увлажнением (СОДК) изоляции.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>При эксплуатации Вы экономите:
+                                                <ul>
+                                                    <li>используя простую и понятную конструкцию с ППМ изоляцией, вместо
+                                                        сложной с «капризным» ППУ материалом,
+                                                    </li>
+                                                    <li>на потерях тепла, т.к. старение ППУ изоляции со временем
+                                                        увеличивает
+                                                        потери тепла при его транспортировке, а ППМ изоляция сохраняет
+                                                        свои
+                                                        свойства неизменными на протяжении всего срока службы,
+                                                    </li>
+                                                    <li>при
+                                                        ремонте трубопроводов, заменяя только те участки, которые
+                                                        необходимы, а не все, которые успели намокнуть,
+                                                    </li>
+                                                    <li>при эксплуатации системы ОДК, так как нет дополнительных затрат
+                                                        на
+                                                        обучение и содержание квалифицированного обслуживающего
+                                                        персонала
+                                                        для труб в ППУ изоляции с системой ОДК.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Задать вопрос</h4>
+                        <form class="feedback-form" action="" name="">
+                            <div class="form-group form-group-lg">
+                                <label for="feed_name">Имя, Фамилия:</label>
+                                <input type="tel" class="form-control" id="feed_name"
+                                       placeholder="Константин Константинович">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label for="feed_mail">Email:</label>
+                                <input type="tel" class="form-control" id="feed_mail" placeholder="mail@server.ru">
+                            </div>
+                            <div class="form-group form-group-lg textarea">
+                                <label for="feed_msg">Текст сообщения:</label>
+                                <textarea class="form-control" rows="7" id="feed_msg"></textarea>
+                            </div>
+                            <button type="submit" class="send-message">Отправить вопрос</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {#{% include 'home/welcome_page.html' %}#}
+
+{% endblock content %}

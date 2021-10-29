@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox-thumbs.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+
+    <div class="container-fluid content-wrapper contacts">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Галерея</h2>
+                        <div class="gallery-wrapper">
+                            <h4>Производство</h4>
+                            <div class="gallery-block row">
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-2-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-2.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-3-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-3.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-4-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-4.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-2-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-2.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-3-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-3.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-4-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-4.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="gallery-block row collapse" id="collapseExample">
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-3-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-3.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-4-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-4.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-2-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-2.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <a class="allphoto" data-toggle="collapse" href="#collapseExample"
+                               aria-expanded="false" aria-controls="collapseExample">Все фотографии</a>
+
+                        </div>
+                        <div class="gallery-wrapper">
+                            <h4>Производство</h4>
+                            <div class="gallery-block row">
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-2-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-2.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-3-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-3.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-4-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-4.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-2-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-2.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-3-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-3.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-4-big.jpg" rel="gallery-2">
+                                        <img src="img/gal-pic-4.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="gallery-block row collapse" id="collapseExample2">
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-3-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-3.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-4-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-4.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <a class="fancybox" href="img/gal-pic-1-big.jpg" rel="gallery-1">
+                                        <img src="img/gal-pic-1.jpg" class="img-responsive" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <a class="allphoto" data-toggle="collapse" href="#collapseExample2"
+                               aria-expanded="false" aria-controls="collapseExample2">Все фотографии</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {#{% include 'home/welcome_page.html' %}#}
+
+{% endblock content %}

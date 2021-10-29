@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    {#<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">#}
+{% endblock extra_css %}
+
+{% block content %}
+
+    <div class="container-fluid content-wrapper form-order">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Создание заявки</h2>
+                    </div>
+                </div>
+                <form class="common-form" action="" name="">
+                    <div class="row form-order-section">
+                        <div class="col-lg-12">
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active">
+                                        <a href="#add-catalog"
+                                           aria-controls="add-catalog"
+                                           role="tab"
+                                           data-toggle="tab">Выбрать из списка</a>
+                                    </li>
+                                    <li>
+                                        <a href="#add-manual"
+                                           aria-controls="add-manual"
+                                           role="tab"
+                                           data-toggle="tab">Добавить вручную</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="add-catalog">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name1">Выбор изделия:</label>
+                                                    <select class="form-control" id="value-name1">
+                                                        <option value="98">Труба</option>
+                                                        <option value="99">Отвод</option>
+                                                        <option value="101">Опора неподвижная</option>
+                                                        <option value="100">Переход</option>
+                                                        <option value="108">Комплект изоляции стыков</option>
+                                                        <option value="109">Скорлупа</option>
+                                                        <option value="107">Концевой элемент трубопровода</option>
+                                                        <option value="106">Элемент трубопровода</option>
+                                                        <option value="113">Кран шаровой</option>
+                                                        <option value="105">Тройник с шаровым краном</option>
+                                                        <option value="102">Тройник</option>
+                                                        <option value="104">Тройник параллельный</option>
+                                                        <option value="103">Тройниковое ответвление</option>
+                                                        <option value="110">Сильфонное компенсирующее устройство
+                                                        </option>
+                                                        <option value="115">Металлическая заглушка изоляции</option>
+                                                        <option value="114">Опора скользящая</option>
+                                                        <option value="112">Маты компенсационные</option>
+                                                        <option value="111">Манжета стенового ввода</option>
+                                                        <option value="116">Лист</option>
+                                                        <option value="117">Уголок</option>
+                                                        <option value="118">Швеллер</option>
+                                                        <option value="339">Труба профильная</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name2">Тип (ГОСТ):</label>
+                                                    <input type="tel" class="form-control" id="value-name2"
+                                                           placeholder="Укажите тип изделия (ГОСТ)">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name3">Диаметр:</label>
+                                                    <select class="form-control" id="value-name3">
+                                                        <option value="1322">14</option>
+                                                        <option value="1323">25</option>
+                                                        <option value="1324">27</option>
+                                                        <option value="1325">32</option>
+                                                        <option value="1326">40</option>
+                                                        <option value="1327">42</option>
+                                                        <option value="1328">50</option>
+                                                        <option value="1329">51</option>
+                                                        <option value="1330">57</option>
+                                                        <option value="1332">76</option>
+                                                        <option value="1333">89</option>
+                                                        <option value="1334">108</option>
+                                                        <option value="1335">114</option>
+                                                        <option value="1336">127</option>
+                                                        <option value="1337">133</option>
+                                                        <option value="1338">159</option>
+                                                        <option value="1339">219</option>
+                                                        <option value="1340">273</option>
+                                                        <option value="1341">325</option>
+                                                        <option value="1342">377</option>
+                                                        <option value="1343">426</option>
+                                                        <option value="1344">530</option>
+                                                        <option value="1345">630</option>
+                                                        <option value="1346">720</option>
+                                                        <option value="1347">820</option>
+                                                        <option value="1348">920</option>
+                                                        <option value="1349">1020</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name4">Толщина стенки:</label>
+                                                    <select class="form-control" id="value-name4">
+                                                        <option value="1350">2</option>
+                                                        <option value="1351">2.5</option>
+                                                        <option value="1352">2.8</option>
+                                                        <option value="1353">3</option>
+                                                        <option value="1354">3.2</option>
+                                                        <option value="1355">3.5</option>
+                                                        <option value="1356">4</option>
+                                                        <option value="1357">4.5</option>
+                                                        <option value="1358">5</option>
+                                                        <option value="1359">5.5</option>
+                                                        <option value="1360">6</option>
+                                                        <option value="1361">7</option>
+                                                        <option value="1362">8</option>
+                                                        <option value="1363">9</option>
+                                                        <option value="1364">10</option>
+                                                        <option value="1365">11</option>
+                                                        <option value="1366">12</option>
+                                                        <option value="1367">13</option>
+                                                        <option value="1368">14</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name5">Количество:</label>
+                                                    <input type="tel" class="form-control" id="value-name5"
+                                                           placeholder="Укажите количество иизделий">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group form-group-lg textarea">
+                                                    <label for="feed_msg2">Примечание:</label>
+                                                    <textarea class="form-control" rows="4" id="feed_msg2"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <a href="#" class="add-item-button">Добавить к заказу</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="add-manual">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name7">Название изделия:</label>
+                                                    <input type="tel" class="form-control" id="value-name7"
+                                                           placeholder="Укажите название изделия">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name8">Количество:</label>
+                                                    <input type="tel" class="form-control" id="value-name8"
+                                                           placeholder="Укажите количество">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-group-lg">
+                                                    <label for="value-name9">Единицы:</label>
+                                                    <select class="form-control" id="value-name9">
+                                                        <option>м</option>
+                                                        <option>шт.</option>
+                                                        <option>тонн</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group form-group-lg textarea">
+                                                    <label for="feed_msg">Примечание:</label>
+                                                    <textarea class="form-control" rows="4" id="feed_msg"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <a href="#" class="add-item-button">Добавить к заказу</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Состав заявки</h3>
+                        </div>
+                    </div>
+                    <div class="row form-order-section">
+                        <div class="col-lg-12">
+                            <table class="table-striped table-bordered order-table">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">№</th>
+                                    <th>Название</th>
+                                    <th colspan="2">Количество</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Труба ст. эл.св. 57x3.5 ППУ-ПЭ-1</td>
+                                    <td>10</td>
+                                    <td>пог.м.</td>
+                                    <td class="del-col"><a href="#" class="delete-link"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td>Сильфонное компенсирующее устройство ст. х/д 273x4.5x1 секция ППУ-ПЭ-1</td>
+                                    <td>900</td>
+                                    <td>шт.</td>
+                                    <td class="del-col"><a href="#" class="delete-link"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td>Концевой элемент трубопровода ст. эл.св. торцевой кабель вывода 57x3.5
+                                        ППУ-ПЭ-1
+                                    </td>
+                                    <td>100</td>
+                                    <td>тонн</td>
+                                    <td class="del-col"><a href="#" class="delete-link"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Контакты</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-group-lg">
+                                <label for="value-name10">Наименование организации:</label>
+                                <input type="tel" class="form-control" id="value-name10"
+                                       placeholder="Введите наименование организации">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                                <label for="value-name11">Контактное лицо:</label>
+                                <input type="tel" class="form-control" id="value-name11"
+                                       placeholder="Контактное лицо">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                                <label for="value-name12">Телефон:</label>
+                                <input type="tel" class="form-control" id="value-name12"
+                                       placeholder="Укажите телефон">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                                <label for="value-name13">Email:</label>
+                                <input type="tel" class="form-control" id="value-name13"
+                                       placeholder="Укажите email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-order-section">
+                        <div class="col-lg-12">
+                            <a href="#" class="add-item-button">Добавить реквизиты</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Оформление заявки</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Рассчитать доставку</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Рассчитать систему компонентов</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group form-group-lg textarea">
+                                <label for="feed_msg3">Примечание к заявке:</label>
+                                <textarea class="form-control" rows="4" id="feed_msg3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-order-section">
+                        <div class="col-lg-12">
+                            <a href="#" class="view-button" data-toggle="modal"
+                               data-target="#previewModal">Просмотреть</a>
+                            <a href="#" class="print-button">Распечатать</a>
+                            <a href="#" class="save-button">Сохранить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    {#{% include 'home/welcome_page.html' %}#}
+
+{% endblock content %}

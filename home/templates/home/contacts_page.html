@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    {#<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">#}
+{% endblock extra_css %}
+
+{% block content %}
+
+    <div class="container-fluid content-wrapper contacts">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Контакты</h2>
+                        <div class="container contacts-wrapper">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Адрес:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7">140415, Россия, Московская обл., г. Коломна, ул.
+                                    Митяево, дом 163
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Телефоны:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7">+7 (800) 200-20-01, +7 (496) 614-46-93</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Факс:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7">+7 (496) 614-46-93</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Сайт:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7"><a href="http://ppmi-info.ru">ppmi-info.ru</a>,
+                                    <a
+                                            href="penopolymer.ru">penopolymer.ru</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Электронная почта:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7"><a href="mailto:market@ppmi-info.ru">market@ppmi-info.ru</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-wrapper">
+                            Яндекс карта
+                        </div>
+                        <h2>Контакты дилеров</h2>
+                        <div class="container dealer-wrapper">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Адрес:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7">г. Нижний Новгород ООО "Полимертехинвест</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Сайт:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7"><a
+                                        href="http://www.ppminvest.pro">www.ppminvest.pro</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-5 text-right text-bold">Электронная почта:</div>
+                                <div class="col-md10 col-sm-8 col-xs-7"><a
+                                        href="mailto:opt@ppminvest.pro">opt@ppminvest.pro</a></div>
+                            </div>
+                        </div>
+                        <p>Информацию о сотрудничестве в регионах можно получить по тел/факс: +7 (496) 614-46-93 или по
+                            e-mail:
+                            <a href="mailto:market@ppmi-info.ru">market@ppmi-info.ru</a></p>
+                        <p>Приглашаем физических лиц и организации к сотрудничеству на взаимовыгодных условиях по
+                            внедрению
+                            энергосберегающей технологии на тепловых сетях.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {#{% include 'home/welcome_page.html' %}#}
+
+{% endblock content %}
