@@ -7,6 +7,34 @@ from wagtail.snippets.models import register_snippet
 
 
 @register_snippet
+class Header(models.Model):
+
+    telephones = RichTextField(
+        features=['enter'],
+        max_length=100,
+        verbose_name="Телефоны предприятия",
+    )
+
+    address = RichTextField(
+        features=['enter'],
+        max_length=100,
+        verbose_name="Адрес предприятия",
+    )
+
+    panels = [
+        FieldPanel('telephones'),
+        FieldPanel('address'),
+    ]
+
+    class Meta:
+        verbose_name = 'Хедер'
+        verbose_name_plural = 'Хедеры'
+
+    def __str__(self):
+        return 'Хедер'
+
+
+@register_snippet
 class Footer(models.Model):
 
     address = RichTextField(
@@ -15,7 +43,8 @@ class Footer(models.Model):
         verbose_name="Адрес предприятия",
     )
 
-    telephones = models.CharField(
+    telephones = RichTextField(
+        features=['enter'],
         max_length=100,
         verbose_name="Телефоны предприятия",
     )

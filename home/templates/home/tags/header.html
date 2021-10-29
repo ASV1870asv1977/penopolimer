@@ -1,0 +1,18 @@
+{% load static wagtailcore_tags %}
+
+
+<div class="container-fluid header">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-5"><a href="/" class="logo"></a></div>
+                <div class="col-sm-6 col-xs-7 head-contacts">
+                    <span class="phones">{{ header.telephones|richtext }}</span>
+                    <span>{{ header.address|richtext }}</span>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-xs-7 col-sm-offset-0 col-xs-offset-5 text-right">
+                    <a href="#" class="callme">Позвоните мне</a></div>
+            </div>
+        </div>
+    </div>
+</div>
