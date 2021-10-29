@@ -296,7 +296,7 @@ h5, .h5 {
       .prod-cards .prod-card .prod-link:hover:before {
         opacity: 0.6; }
       .prod-cards .prod-card .prod-link.p1:before {
-        /*background-image: url("../img/prod1.png");*/ }
+        background-image: url("../img/prod1.png"); }
       .prod-cards .prod-card .prod-link.p2:before {
         background-image: url("../img/prod2.png"); }
       .prod-cards .prod-card .prod-link.p3:before {
