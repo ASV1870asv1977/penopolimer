@@ -432,52 +432,52 @@ h5, .h5 {
         transition: all .3s;
       }
 
-      &:hover {
-        &:before {
-          opacity: 0.6;
-        }
-      }
+      //&:hover {
+      //  &:before {
+      //    opacity: 0.6;
+      //  }
+      //}
 
-      &.p1 {
-        &:before {
-          /*background-image: url("../img/prod1.png");*/
-        }
-      }
-      &.p2 {
-        &:before {
-          background-image: url("../img/prod2.png");
-        }
-      }
-      &.p3 {
-        &:before {
-          background-image: url("../img/prod3.png");
-        }
-      }
-      &.p4 {
-        &:before {
-          background-image: url("../img/prod4.png");
-        }
-      }
-      &.p5 {
-        &:before {
-          background-image: url("../img/prod5.png");
-        }
-      }
-      &.p6 {
-        &:before {
-          background-image: url("../img/prod6.png");
-        }
-      }
-      &.p7 {
-        &:before {
-          background-image: url("../img/prod7.png");
-        }
-      }
-      &.p8 {
-        &:before {
-          background-image: url("../img/prod8.png");
-        }
-      }
+      //&.p1 {
+      //  &:before {
+      //    /*background-image: url("../img/prod1.png");*/
+      //  }
+      //}
+      //&.p2 {
+      //  &:before {
+      //    background-image: url("../img/prod2.png");
+      //  }
+      //}
+      //&.p3 {
+      //  &:before {
+      //    background-image: url("../img/prod3.png");
+      //  }
+      //}
+      //&.p4 {
+      //  &:before {
+      //    background-image: url("../img/prod4.png");
+      //  }
+      //}
+      //&.p5 {
+      //  &:before {
+      //    background-image: url("../img/prod5.png");
+      //  }
+      //}
+      //&.p6 {
+      //  &:before {
+      //    background-image: url("../img/prod6.png");
+      //  }
+      //}
+      //&.p7 {
+      //  &:before {
+      //    background-image: url("../img/prod7.png");
+      //  }
+      //}
+      //&.p8 {
+      //  &:before {
+      //    background-image: url("../img/prod8.png");
+      //  }
+      //}
 
       span {
         display: block;

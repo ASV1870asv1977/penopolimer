@@ -1,6 +1,6 @@
 from django import template
 
-from home.models import Footer
+from home.models import Footer, Header, ProductCardPages
 
 register = template.Library()
 
@@ -9,7 +9,7 @@ register = template.Library()
 def header_tag(context):
     return {
         'request': context['request'],
-        'header': Footer.objects.first(),
+        'header': Header.objects.first(),
     }
 
 
@@ -19,3 +19,12 @@ def footer_tag(context):
         'request': context['request'],
         'footer': Footer.objects.first(),
     }
+
+
+@register.inclusion_tag('home/tags/product_card_page.html', takes_context=True)
+def product_card_tag(context):
+    return {
+        'request': context['request'],
+        'product_card': ProductCardPages.objects.first(),
+    }
+

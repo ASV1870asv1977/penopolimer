@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailimages_tags wagtailcore_tags %}
+{% load static wagtailimages_tags wagtailcore_tags base_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -36,87 +36,92 @@
             </div>
         </div>
     </div>
-    <div class="container prod-cards">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p1">
-                        <span>Трубы</span>
-                        Труба с отечественной заводской пенополимерминеральной тепловой изоляцией не уступает зарубежным
-                        аналогам.
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p2">
-                        <span>Отводы</span>
-                        Толщина стенки отвода и стальной трубы, а также марка стали определяются проектной организацией
-                        и
-                        зависят от конкретных условий эксплуатации.
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p3">
-                        <span>Шаровые краны</span>
-                        По согласованию с Заказчиком возможно изготовление предизолированных шаровых кранов других типов
-                        и
-                        производителей.
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p4">
-                        <span>АЗМ</span>
-                        По согласованию с Заказчиком возможно изготовление предизолированных шаровых кранов других типов
-                        и
-                        производителей.
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p5">
-                        <span>Неподвижные Опоры</span>
-                        Крепление может осуществляться по различным технологиям: посредством сварочного оборудования, с
-                        помощью хомутов.
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p6">
-                        <span>Тройники</span>
-                        Толщина стенки тройника и стальной трубы, определяется проектной организацией, и зависят от
-                        конкретных условий эксплуатации.
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p7">
-                        <span>Подвижная опора</span>
-                        Наша компания осуществляет раскрой листового металла, используя установку плазменной резки с
-                        числовым программным управлением.
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="prod-card">
-                    <a href="#" class="prod-link p8">
-                        <span>Плазменная резка</span>
-                        Наша компания осуществляет раскрой листового металла, используя установку плазменной резки с
-                        числовым программным управлением.
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+    {% product_card_tag %}
+
+
+{#    <div class="container prod-cards">#}
+{#        <div class="row">#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p1">#}
+{#                        <span>Трубы</span>#}
+{#                        Труба с отечественной заводской пенополимерминеральной тепловой изоляцией не уступает зарубежным#}
+{#                        аналогам.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p2">#}
+{#                        <span>Отводы</span>#}
+{#                        Толщина стенки отвода и стальной трубы, а также марка стали определяются проектной организацией#}
+{#                        и#}
+{#                        зависят от конкретных условий эксплуатации.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p3">#}
+{#                        <span>Шаровые краны</span>#}
+{#                        По согласованию с Заказчиком возможно изготовление предизолированных шаровых кранов других типов#}
+{#                        и#}
+{#                        производителей.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p4">#}
+{#                        <span>АЗМ</span>#}
+{#                        По согласованию с Заказчиком возможно изготовление предизолированных шаровых кранов других типов#}
+{#                        и#}
+{#                        производителей.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p5">#}
+{#                        <span>Неподвижные Опоры</span>#}
+{#                        Крепление может осуществляться по различным технологиям: посредством сварочного оборудования, с#}
+{#                        помощью хомутов.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p6">#}
+{#                        <span>Тройники</span>#}
+{#                        Толщина стенки тройника и стальной трубы, определяется проектной организацией, и зависят от#}
+{#                        конкретных условий эксплуатации.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p7">#}
+{#                        <span>Подвижная опора</span>#}
+{#                        Наша компания осуществляет раскрой листового металла, используя установку плазменной резки с#}
+{#                        числовым программным управлением.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md-3 col-sm-6">#}
+{#                <div class="prod-card">#}
+{#                    <a href="#" class="prod-link p8">#}
+{#                        <span>Плазменная резка</span>#}
+{#                        Наша компания осуществляет раскрой листового металла, используя установку плазменной резки с#}
+{#                        числовым программным управлением.#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
     <div class="container-fluid news-wrapper">
         <div class="row">
             <div class="container">

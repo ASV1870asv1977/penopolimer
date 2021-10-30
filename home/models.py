@@ -1,5 +1,6 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
+from modelcluster.models import ClusterableModel
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel, StreamFieldPanel
 from wagtail.core.fields import RichTextField, StreamField
 
@@ -9,6 +10,62 @@ from wagtail.snippets.models import register_snippet
 
 from wagtail.core.blocks import RichTextBlock, CharBlock
 from wagtail.images.blocks import ImageChooserBlock
+
+
+class ProductCard(Orderable):
+    product_image = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='изображение'
+    )
+
+    product_name = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Название продукции",
+    )
+
+    product_description = RichTextField(
+        features=['enter'],
+        max_length=200,
+        blank=True,
+        null=True,
+        verbose_name="Описание продукции",
+    )
+
+    equipment = ParentalKey(
+        'home.ProductCardPages',
+        on_delete=models.CASCADE,
+        related_name='products',
+    )
+
+    panels = [
+        ImageChooserPanel('product_image'),
+        FieldPanel('product_name'),
+        FieldPanel('product_description'),
+    ]
+
+
+@register_snippet
+class ProductCardPages(ClusterableModel):
+    panels = [
+        MultiFieldPanel(
+            [
+                InlinePanel('products', label='карточку продукции'),
+            ],
+            heading='Продукция'),
+    ]
+
+    class Meta:
+        verbose_name = 'Карточка продукции'
+        verbose_name_plural = 'Карточки продукции'
+
+    def __str__(self):
+        return 'Карточки продукции'
 
 
 @register_snippet
