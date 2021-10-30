@@ -1,11 +1,14 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
-from wagtail.core.fields import RichTextField
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.core.fields import RichTextField, StreamField
 
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
+
+from wagtail.core.blocks import RichTextBlock, CharBlock
+from wagtail.images.blocks import ImageChooserBlock
 
 
 @register_snippet
@@ -120,14 +123,6 @@ class HomeSlidesImage(Orderable):
         verbose_name="Название продукции",
     )
 
-    # product_name = RichTextField(
-    #     features=['enter'],
-    #     blank=True,
-    #     null=True,
-    #     max_length=100,
-    #     verbose_name="Название продукции",
-    # )
-
     product_description = RichTextField(
         features=['enter'],
         blank=True,
@@ -164,18 +159,35 @@ class HomePage(Page):
 
     parent_page_types = []
 
-    # name_page = models.CharField(
-    #     max_length=100,
-    #     blank=True,
-    #     null=True,
-    #     verbose_name="Подзаголовок",
-    # )
+    article_image = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='изображение'
+    )
+
+    article_title = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+    )
+
+    article = RichTextField(
+        features=['bold', 'italic', 'ol', 'ul', 'link', 'enter'],
+        blank=True,
+        null=True,
+    )
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             InlinePanel('slides', label='слайд')],
             heading='Слайды'),
+        MultiFieldPanel([
+            ImageChooserPanel('article_image'),
+            FieldPanel('article_title'),
+            FieldPanel('article'),
+        ],
+            heading='Статья'),
     ]
-    # content_panels = Page.content_panels + [
-    #     FieldPanel('name_page'),
-    # ]

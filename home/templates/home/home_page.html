@@ -13,9 +13,8 @@
         <div class="row">
             <div class="main-slider">
 
-
                 {% for slide in page.slides.all %}
-                    {% image slide.image_slide fill-2000x600 as bigimage %}
+                    {% image slide.image_slide original as bigimage %}
                     <div>
                         <div class="slide-wrap">
                             <div class="slide-pic" style="background-image: url({{ bigimage.url }})"></div>
@@ -32,38 +31,8 @@
                             </div>
                         </div>
                     </div>
-
                 {% endfor %}
 
-
-                {#                <div>#}
-                {#                    <div class="slide-wrap">#}
-                {#                        <div class="slide-pic" style="background-image: url({% static 'img/slide1.jpg' %})"></div>#}
-                {#                        <div class="container">#}
-                {#                            <div class="slide-content">#}
-                {#                                <p><span class="slider-head">ППМ изоляция —</span> современный высокоэффективный<br/>материал#}
-                {#                                    для#}
-                {#                                    изоляции труб<br/>вашей тепловой сети#}
-                {#                                </p>#}
-                {#                                <a href="#" class="slide-button">Описание нашей продукции</a>#}
-                {#                            </div>#}
-                {#                        </div>#}
-                {#                    </div>#}
-                {#                </div>#}
-                {#                <div>#}
-                {#                    <div class="slide-wrap">#}
-                {#                        <div class="slide-pic" style="background-image: url({% static 'img/slide2.jpg' %})"></div>#}
-                {#                        <div class="container">#}
-                {#                            <div class="slide-content">#}
-                {#                                <p><span class="slider-head">Неподвижные опоры —</span> крепление может#}
-                {#                                    осуществляться<br/>по#}
-                {#                                    различным технологиям:<br/>посредством сварочного оборудования, с помощью хомутов.#}
-                {#                                </p>#}
-                {#                                <a href="#" class="slide-button">Описание нашей продукции</a>#}
-                {#                            </div>#}
-                {#                        </div>#}
-                {#                    </div>#}
-                {#                </div>#}
             </div>
         </div>
     </div>
@@ -234,21 +203,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="about-pic"><img src="img/pic.jpg" alt="" class="img-responsive"></div>
+                        <div class="about-pic">
+                            {% image page.article_image original as image %}
+                            <img src="{{ image.url }}" alt="" class="img-responsive"></div>
                         <div class="about-text">
-                            <p class="h2">Наша компания</p>
-                            <p>Наше предприятие обладает технологической возможностью поставлять теплоизолированные
-                                трубы и
-                                фасонные
-                                изделия в ППМИ с наружным диаметром стальной трубы от 25 до 820 мм, гарантируя их
-                                качество в
-                                строгом
-                                соответствии с сертификатами на выпускаемую продукцию.</p>
-                            <p>По желанию Заказчика производится погрузка и доставка продукции до объекта.</p>
-                            <p>Гарантия на выпускаемую продукцию - 10 лет, при соблюдении Заказчиком условий
-                                транспортировки,
-                                хранения и эксплуатации изделий.</p>
-                            <p>Стоимость выпускаемой продукции Вы можете уточнить у специалистов отдела продаж.</p>
+                            <p class="h2">{{ page.article_title }}</p>
+                            <p>{{ page.article|richtext }}</p>
                             <a href="#" class="about-button">Подробнее о компании</a>
                         </div>
                     </div>
