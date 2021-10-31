@@ -12,6 +12,75 @@ from wagtail.core.blocks import RichTextBlock, CharBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 
+class EventCard(Orderable):
+    event_data = models.CharField(max_length=2, verbose_name="Число месяца")
+    event_month = models.CharField(max_length=8, verbose_name="Месяц")
+    event_name = RichTextField(
+        max_length=200,
+        features=['bold', 'italic', 'ol', 'ul', 'link', 'enter'],
+        verbose_name="Название мероприятия",
+    )
+    event_description = RichTextField(
+        features=['bold', 'italic', 'ol', 'ul', 'link', 'enter'],
+        verbose_name="Описание мероприятия",
+    )
+    event = ParentalKey(
+        'home.EventNewsPages',
+        on_delete=models.CASCADE,
+        related_name='events',
+    )
+    panels = [
+        FieldPanel('event_data'),
+        FieldPanel('event_month'),
+        FieldPanel('event_name'),
+        FieldPanel('event_description'),
+    ]
+
+
+class NewsCard(Orderable):
+    news_data = models.CharField(max_length=2, verbose_name="Число месяца")
+    news_month = models.CharField(max_length=8, verbose_name="Месяц")
+    news_name = RichTextField(
+        max_length=200,
+        features=['bold', 'italic', 'ol', 'ul', 'link', 'enter'],
+        verbose_name="Название новости",
+    )
+    news_description = RichTextField(
+        features=['bold', 'italic', 'ol', 'ul', 'link', 'enter'],
+        verbose_name="Описание новости",
+    )
+    news = ParentalKey(
+        'home.EventNewsPages',
+        on_delete=models.CASCADE,
+        related_name='news',
+    )
+    panels = [
+        FieldPanel('news_data'),
+        FieldPanel('news_month'),
+        FieldPanel('news_name'),
+        FieldPanel('news_description'),
+    ]
+
+
+@register_snippet
+class EventNewsPages(ClusterableModel):
+    panels = [
+        MultiFieldPanel(
+            [InlinePanel('events', label='мероприятие')],
+            heading='Мероприятия'),
+        MultiFieldPanel(
+            [InlinePanel('news', label='новость')],
+            heading='Новости'),
+    ]
+
+    class Meta:
+        verbose_name = 'Новости и мероприятия'
+        verbose_name_plural = 'Новости и мероприятия'
+
+    def __str__(self):
+        return 'Новости и мероприятия'
+
+
 class ProductCard(Orderable):
     product_image = models.ForeignKey(
         'wagtailimages.Image',
@@ -54,9 +123,7 @@ class ProductCard(Orderable):
 class ProductCardPages(ClusterableModel):
     panels = [
         MultiFieldPanel(
-            [
-                InlinePanel('products', label='карточку продукции'),
-            ],
+            [InlinePanel('products', label='карточку продукции')],
             heading='Продукция'),
     ]
 

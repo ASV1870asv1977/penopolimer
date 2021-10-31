@@ -1,6 +1,6 @@
 from django import template
 
-from home.models import Footer, Header, ProductCardPages
+from home.models import Footer, Header, ProductCardPages, EventNewsPages
 
 register = template.Library()
 
@@ -26,5 +26,13 @@ def product_card_tag(context):
     return {
         'request': context['request'],
         'product_card': ProductCardPages.objects.first(),
+    }
+
+
+@register.inclusion_tag('home/tags/event_news_page.html', takes_context=True)
+def event_news_tag(context):
+    return {
+        'request': context['request'],
+        'event_news': EventNewsPages.objects.first(),
     }
 

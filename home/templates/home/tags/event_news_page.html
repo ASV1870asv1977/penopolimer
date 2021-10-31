@@ -1,0 +1,41 @@
+{% load static wagtailcore_tags base_tags %}
+
+
+<div class="container-fluid news-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p class="h2">Календарь мероприятий</p>
+                    {% for event in event_news.events.all %}
+                        <div class="news-item">
+                            <div class="news-date">
+                                <div class="day">{{ event.event_data }}</div>
+                                <div class="month">{{ event.event_month }}</div>
+                            </div>
+                            <div class="news-content"><a href="#">{{ event.event_name|richtext }}</a>
+                                <p>{{ event.event_description|richtext }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <a href="#" class="news-button">Все мероприятия</a>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <p class="h2">Новости</p>
+                    {% for new in event_news.news.all %}
+                        <div class="news-item">
+                            <div class="news-date">
+                                <div class="day">{{ new.news_data }}</div>
+                                <div class="month">{{ new.news_month }}</div>
+                            </div>
+                            <div class="news-content"><a href="#">{{ new.news_name|richtext }}</a>
+                                <p>{{ new.news_description|richtext }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <a href="#" class="news-button">Все новости</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

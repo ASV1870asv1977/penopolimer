@@ -1,18 +1,11 @@
 {% extends "base.html" %}
 {% load static wagtailimages_tags wagtailcore_tags base_tags %}
 
-{% block body_class %}template-homepage{% endblock %}
-
-{% block extra_css %}
-    {#<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">#}
-{% endblock extra_css %}
 
 {% block content %}
-
     <div class="container-fluid">
         <div class="row">
             <div class="main-slider">
-
                 {% for slide in page.slides.all %}
                     {% image slide.image_slide original as bigimage %}
                     <div>
@@ -21,9 +14,7 @@
                             <div class="container">
                                 <div class="slide-content">
                                     <p>
-                                        <span class="slider-head">
-                                            {{ slide.product_name }}
-                                        </span>
+                                        <span class="slider-head">{{ slide.product_name }}</span>
                                         {{ slide.product_description|richtext }}
                                     </p>
                                     <a href="#" class="slide-button">Описание нашей продукции</a>
@@ -32,177 +23,14 @@
                         </div>
                     </div>
                 {% endfor %}
-
             </div>
         </div>
     </div>
-
 
     {% product_card_tag %}
 
+    {% event_news_tag %}
 
-{#    <div class="container prod-cards">#}
-{#        <div class="row">#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p1">#}
-{#                        <span>Трубы</span>#}
-{#                        Труба с отечественной заводской пенополимерминеральной тепловой изоляцией не уступает зарубежным#}
-{#                        аналогам.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p2">#}
-{#                        <span>Отводы</span>#}
-{#                        Толщина стенки отвода и стальной трубы, а также марка стали определяются проектной организацией#}
-{#                        и#}
-{#                        зависят от конкретных условий эксплуатации.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p3">#}
-{#                        <span>Шаровые краны</span>#}
-{#                        По согласованию с Заказчиком возможно изготовление предизолированных шаровых кранов других типов#}
-{#                        и#}
-{#                        производителей.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p4">#}
-{#                        <span>АЗМ</span>#}
-{#                        По согласованию с Заказчиком возможно изготовление предизолированных шаровых кранов других типов#}
-{#                        и#}
-{#                        производителей.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="row">#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p5">#}
-{#                        <span>Неподвижные Опоры</span>#}
-{#                        Крепление может осуществляться по различным технологиям: посредством сварочного оборудования, с#}
-{#                        помощью хомутов.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p6">#}
-{#                        <span>Тройники</span>#}
-{#                        Толщина стенки тройника и стальной трубы, определяется проектной организацией, и зависят от#}
-{#                        конкретных условий эксплуатации.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p7">#}
-{#                        <span>Подвижная опора</span>#}
-{#                        Наша компания осуществляет раскрой листового металла, используя установку плазменной резки с#}
-{#                        числовым программным управлением.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-3 col-sm-6">#}
-{#                <div class="prod-card">#}
-{#                    <a href="#" class="prod-link p8">#}
-{#                        <span>Плазменная резка</span>#}
-{#                        Наша компания осуществляет раскрой листового металла, используя установку плазменной резки с#}
-{#                        числовым программным управлением.#}
-{#                    </a>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-    <div class="container-fluid news-wrapper">
-        <div class="row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <p class="h2">Календарь мероприятий</p>
-                        <div class="news-item">
-                            <div class="news-date">
-                                <div class="day">11</div>
-                                <div class="month">ноябрь</div>
-                            </div>
-                            <div class="news-content"><a href="#">Выставка "СТИМэкспо" г. Ростов-на-Дону</a>
-                                <p>С 16 по 19 марта в Выставочном Центре "ВертолЭкспо" г. Ростов-на-Дону будет проходить
-                                    выставка "СТИМэкспо: Инженерные решения".</p>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-date">
-                                <div class="day">16</div>
-                                <div class="month">марта</div>
-                            </div>
-                            <div class="news-content"><a href="#">Выставка "СТИМэкспо" г. Ростов-на-Дону</a>
-                                <p>ООО НПП «Пенополимер» приняло участие в ХIII международной конференции «ТЕПЛО
-                                    РОССИИ»,
-                                    которая состоялась 11-12 декабря в отеле «Melior Greenwood».</p>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-date">
-                                <div class="day">29</div>
-                                <div class="month">сентября</div>
-                            </div>
-                            <div class="news-content"><a href="#">Новый видеоролик нашей компании</a>
-                                <p>Уважаемые клиенты, ООО НПП "Пенополимер" представляет новый видеоролик нашей компании
-                                    посвященный обучению по изоляции участков сварных стыков на трубопроводах в
-                                    пенополимерминеральной изоляции.</p>
-                            </div>
-                        </div>
-                        <a href="#" class="news-button">Все мероприятия</a>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <p class="h2">Новости</p>
-                        <div class="news-item">
-                            <div class="news-date">
-                                <div class="day">11</div>
-                                <div class="month">ноябрь</div>
-                            </div>
-                            <div class="news-content"><a href="#">Выставка "СТИМэкспо" г. Ростов-на-Дону</a>
-                                <p>С 16 по 19 марта в Выставочном Центре "ВертолЭкспо" г. Ростов-на-Дону будет проходить
-                                    выставка "СТИМэкспо: Инженерные решения".</p>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-date">
-                                <div class="day">16</div>
-                                <div class="month">марта</div>
-                            </div>
-                            <div class="news-content"><a href="#">ГОСТ-Р 56227-2014 «Трубы и фасонные изделия стальные в
-                                пенополимерминеральной изоляции»</a>
-                                <p>Уважаемые клиенты, мы рады Вам сообщить, что с 1 сентября 2015 года в силу вступил
-                                    Государственный стандарт (ГОСТ) Р 56227-2014 – «Трубы и фасонные изделия стальные в
-                                    пенополимерминеральной изоляции.</p>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-date">
-                                <div class="day">29</div>
-                                <div class="month">сентября</div>
-                            </div>
-                            <div class="news-content"><a href="#">Производство трубопроводов в ППМ изоляции</a>
-                                <p>Уважаемые клиенты, ООО НПП "Пенополимер" представляет новый видеоролик нашей компании
-                                    посвященный обучению по изоляции участков сварных стыков на трубопроводах в
-                                    пенополимерминеральной изоляции.</p>
-                            </div>
-                        </div>
-                        <a href="#" class="news-button">Все новости</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid about-wrapper">
         <div class="row">
             <div class="container">
@@ -221,13 +49,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-    {#{% include 'home/welcome_page.html' %}#}
-
 {% endblock content %}

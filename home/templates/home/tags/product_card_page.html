@@ -3,16 +3,16 @@
 
 <div class="container prod-cards">
     <div class="row">
-
         {% for product in product_card.products.all %}
             {% image product.product_image original as prodimage %}
             <div class="col-md-3 col-sm-6">
-                <div class="prod-card" style="background-image: url({{ prodimage.url }});
-                        display: block;
-                        background-repeat: no-repeat;
-                        background-position: center top;
-                        transition: all .3s;
-                        box-sizing: border-box">
+                <div class="prod-card"
+                     style="background-image: url({{ prodimage.url }});
+                             display: block;
+                             background-repeat: no-repeat;
+                             background-position: center top;
+                             transition: all .3s;
+                             box-sizing: border-box">
                     <a href="#" class="prod-link">
                         <span>{{ product.product_name }}</span>
                         {{ product.product_description|richtext }}
@@ -20,6 +20,5 @@
                 </div>
             </div>
         {% endfor %}
-
     </div>
 </div>
